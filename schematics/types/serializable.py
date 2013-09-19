@@ -1,6 +1,5 @@
 
 from schematics.types.base import BaseType
-from schematics.models import Model
 
 def serializable(*args, **kwargs):
     """A serializable is a way to define dynamic serializable fields that are
@@ -76,7 +75,7 @@ def for_jsonschema(model):
         'properties': properties
     }
 
-def from_jsonschema(schema, model=Model):
+def from_jsonschema(schema, model):
     """Generate a Schematics Model class from a JSON schema.  The JSON
     schema's title field will be the name of the class.  You must specify a
     title and at least one property or there will be an AttributeError.
